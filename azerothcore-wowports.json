@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": "8085",
+        "Name": "",
+        "Description": "Port used for main game traffic",
+        "Ref": ""
+    },
+    {
+        "Protocol": "TCP",
+        "Port": "3724",
+        "Name": "",
+        "Description": "Port used for main game traffic",
+        "Ref": ""
+    }
+]
