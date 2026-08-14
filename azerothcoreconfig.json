@@ -1,0 +1,108 @@
+[
+    {
+        "DisplayName": "Server Folder",
+        "Category": "AzerothCore:server",
+        "Subcategory": "Paths:dns:1",
+        "Description": "Folder under the AMP instance root containing authserver/worldserver, their config folder, and extracted client data.",
+        "Keywords": "server,path,folder",
+        "FieldName": "ServerRoot",
+        "InputType": "text",
+        "ParamFieldName": "ServerRoot",
+        "Required": true,
+        "DefaultValue": "server",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Auth Server Binary",
+        "Category": "AzerothCore:server",
+        "Subcategory": "Paths:dns:1",
+        "Description": "Executable filename inside Server Folder.",
+        "Keywords": "authserver,login,binary",
+        "FieldName": "AuthBinary",
+        "InputType": "text",
+        "ParamFieldName": "AuthBinary",
+        "Required": true,
+        "DefaultValue": "bin\\authserver.exe",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "World Server Binary",
+        "Category": "AzerothCore:server",
+        "Subcategory": "Paths:dns:1",
+        "Description": "Executable filename inside Server Folder.",
+        "Keywords": "worldserver,realm,binary",
+        "FieldName": "WorldBinary",
+        "InputType": "text",
+        "ParamFieldName": "WorldBinary",
+        "Required": true,
+        "DefaultValue": "bin\\worldserver.exe",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Database Host",
+        "Category": "AzerothCore:database",
+        "Subcategory": "MariaDB:dns:1",
+        "Description": "Host/IP of the MariaDB AMP instance. Keep this private; do not expose the database port to friends.",
+        "Keywords": "mysql,mariadb,database,host",
+        "FieldName": "DatabaseHost",
+        "InputType": "text",
+        "ParamFieldName": "DatabaseHost",
+        "Required": true,
+        "DefaultValue": "127.0.0.1",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Database Port",
+        "Category": "AzerothCore:database",
+        "Subcategory": "MariaDB:dns:1",
+        "Description": "MariaDB server port.",
+        "Keywords": "mysql,mariadb,database,port",
+        "FieldName": "DatabasePort",
+        "InputType": "number",
+        "ParamFieldName": "DatabasePort",
+        "Required": true,
+        "DefaultValue": "3306",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Startup Timeout (seconds)",
+        "Category": "AzerothCore:server",
+        "Subcategory": "Startup:dns:2",
+        "Description": "Maximum time AMP waits for the database and both WoW ports to become reachable.",
+        "Keywords": "startup,timeout",
+        "FieldName": "StartupTimeoutSeconds",
+        "InputType": "number",
+        "ParamFieldName": "StartupTimeoutSeconds",
+        "Required": true,
+        "DefaultValue": "180",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Auth-to-World Delay (seconds)",
+        "Category": "AzerothCore:server",
+        "Subcategory": "Startup:dns:2",
+        "Description": "Small delay after authserver starts before worldserver starts.",
+        "Keywords": "startup,delay,auth,world",
+        "FieldName": "StartupDelaySeconds",
+        "InputType": "number",
+        "ParamFieldName": "StartupDelaySeconds",
+        "Required": true,
+        "DefaultValue": "5",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Run Database Import on AMP Update",
+        "Category": "AzerothCore:database",
+        "Subcategory": "Database:dns:2",
+        "Description": "Runs server/dbimport(.exe) when you click AMP Update. Leave enabled for first setup; disable if your supplied core does not include dbimport.",
+        "Keywords": "database,import,updates",
+        "FieldName": "RunDatabaseImport",
+        "InputType": "checkbox",
+        "ParamFieldName": "RunDatabaseImport",
+        "DefaultValue": "True",
+        "EnumValues": {
+            "True": "True",
+            "False": "False"
+        }
+    }
+]

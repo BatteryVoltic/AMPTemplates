@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "TCP",
+        "Port": 3724,
+        "Ref": "ApplicationPort1",
+        "Name": "Auth Server Port",
+        "Description": "WoW login/authentication traffic"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": 8085,
+        "Ref": "ApplicationPort2",
+        "Name": "World Server Port",
+        "Description": "WoW realm/world traffic"
+    }
+]

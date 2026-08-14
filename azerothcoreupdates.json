@@ -1,0 +1,40 @@
+[
+    {
+        "UpdateStageName": "Create server folder",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}server"
+    },
+    {
+        "UpdateStageName": "Create tools folder",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}tools"
+    },
+    {
+        "UpdateStageName": "Import AzerothCore databases",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "tools\\AcoreDbImportHost.exe",
+        "UpdateSourceArgs": "--server-root \"{{$FullBaseDir}}server\" --binary \"bin\\dbimport.exe\"",
+        "UpdateSourceConditionSetting": "RunDatabaseImport",
+        "UpdateSourceConditionValue": "True",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Import AzerothCore databases",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "tools/AcoreDbImportHost",
+        "UpdateSourceArgs": "--server-root \"{{$FullBaseDir}}server\" --binary \"bin/dbimport\"",
+        "UpdateSourceConditionSetting": "RunDatabaseImport",
+        "UpdateSourceConditionValue": "True",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Mark Linux host executable",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "SetExecutableFlag",
+        "UpdateSourceArgs": "tools/AcoreAmpHost"
+    }
+]
