@@ -1,40 +1,22 @@
 [
     {
-        "UpdateStageName": "Create server folder",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "CreateDirectory",
-        "UpdateSourceArgs": "{{$FullBaseDir}}server"
-    },
-    {
-        "UpdateStageName": "Create tools folder",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "CreateDirectory",
-        "UpdateSourceArgs": "{{$FullBaseDir}}tools"
-    },
-    {
-        "UpdateStageName": "Import AzerothCore databases",
+        "UpdateStageName": "Prepare self-installing AzerothCore stack (Windows)",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
-        "UpdateSourceData": "tools\\AcoreDbImportHost.exe",
-        "UpdateSourceArgs": "--server-root \"{{$FullBaseDir}}server\" --binary \"bin\\dbimport.exe\"",
-        "UpdateSourceConditionSetting": "RunDatabaseImport",
+        "UpdateSourceData": "tools\\AcoreStackHost.exe",
+        "UpdateSourceArgs": "--prepare --stack-root \"{{$StackRoot}}\" --project-name \"{{$ProjectName}}\" --image-tag \"{{$ImageTag}}\" --realm-address \"{{$RealmAddress}}\" --registration-token \"{{$RegistrationToken}}\" --account-port {{$ApplicationPort3}} --auth-port {{$ApplicationPort1}} --world-port {{$ApplicationPort2}} --startup-timeout {{$StartupTimeoutSeconds}}",
+        "UpdateSourceConditionSetting": "PrepareOnUpdate",
         "UpdateSourceConditionValue": "True",
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Import AzerothCore databases",
+        "UpdateStageName": "Prepare self-installing AzerothCore stack (Linux)",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
-        "UpdateSourceData": "tools/AcoreDbImportHost",
-        "UpdateSourceArgs": "--server-root \"{{$FullBaseDir}}server\" --binary \"bin/dbimport\"",
-        "UpdateSourceConditionSetting": "RunDatabaseImport",
+        "UpdateSourceData": "tools/AcoreStackHost",
+        "UpdateSourceArgs": "--prepare --stack-root \"{{$StackRoot}}\" --project-name \"{{$ProjectName}}\" --image-tag \"{{$ImageTag}}\" --realm-address \"{{$RealmAddress}}\" --registration-token \"{{$RegistrationToken}}\" --account-port {{$ApplicationPort3}} --auth-port {{$ApplicationPort1}} --world-port {{$ApplicationPort2}} --startup-timeout {{$StartupTimeoutSeconds}}",
+        "UpdateSourceConditionSetting": "PrepareOnUpdate",
         "UpdateSourceConditionValue": "True",
         "SkipOnFailure": false
-    },
-    {
-        "UpdateStageName": "Mark Linux host executable",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "SetExecutableFlag",
-        "UpdateSourceArgs": "tools/AcoreAmpHost"
     }
 ]

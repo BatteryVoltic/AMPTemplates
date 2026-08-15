@@ -12,5 +12,12 @@
         "Ref": "ApplicationPort2",
         "Name": "World Server Port",
         "Description": "WoW realm/world traffic"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": 8090,
+        "Ref": "ApplicationPort3",
+        "Name": "Account Registration Port",
+        "Description": "Private friend account registration API; expose only through VPN or protected HTTPS"
     }
 ]
