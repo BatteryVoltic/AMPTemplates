@@ -2,8 +2,10 @@
     {
         "UpdateStageName": "Make Linux bootstrap executable",
         "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "SetExecutableFlag",
-        "UpdateSourceArgs": "tools/AcoreStackHost"
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/chmod",
+        "UpdateSourceArgs": "+x tools/AcoreStackHost",
+        "SkipOnFailure": false
     },
     {
         "UpdateStageName": "Prepare self-installing AzerothCore stack (Windows)",
