@@ -1,5 +1,5 @@
 Meta.DisplayName=WoW WotLK - AzerothCore
-Meta.Description=AMP-managed self-bootstrapping AzerothCore 3.3.5a Docker stack for a private friends-only realm
+Meta.Description=AMP-managed self-bootstrapping AzerothCore 3.3.5a Podman Compose stack for a private friends-only realm
 Meta.OS=Windows, Linux
 Meta.Arch=x86_64
 Meta.AarchSupport=Unknown
@@ -12,7 +12,7 @@ Meta.ConfigRoot=azerothcore.kvp
 Meta.MinAMPVersion=2.6.2.6
 Meta.SpecificDockerImage=
 Meta.DockerRequired=False
-Meta.ContainerPolicy=NoPreference
+Meta.ContainerPolicy=NotSupported
 Meta.Prerequisites=[]
 Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
