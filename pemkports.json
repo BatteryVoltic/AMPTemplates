@@ -1,0 +1,9 @@
+[
+  {
+    "Protocol": "TCP",
+    "Port": 9998,
+    "Ref": "GamePort",
+    "Name": "PEMK Game Port",
+    "Description": "Pok\u00e9mon Essentials MMO TCP (Docker compose fixed at 9998)"
+  }
+]
