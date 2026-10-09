@@ -1,0 +1,26 @@
+[
+  {
+    "UpdateStageName": "Download PEMK project",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"mkdir -p PEMK && if [ -d PEMK/project/.git ]; then git -C PEMK/project pull --ff-only; else git clone --depth 1 https://github.com/SamDreamsMaker/pokemon-essentials-mmo-kit.git PEMK/project; fi\"",
+    "SkipOnFailure": false
+  },
+  {
+    "UpdateStageName": "Install Ruby gems",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"cd PEMK/project/server && bundle config set --local path ../../vendor/bundle && bundle install\"",
+    "SkipOnFailure": false
+  },
+  {
+    "UpdateStageName": "Configure integrated PostgreSQL launcher",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "-c \"mkdir -p PEMK && echo IyEvdXNyL2Jpbi9lbnYgYmFzaApzZXQgLWV1byBwaXBlZmFpbApjZCAiJChkaXJuYW1lICIkMCIpIgpleHBvcnQgSE9NRT0iJHtIT01FOi0kKHB3ZCl9IgpleHBvcnQgQlVORExFX1BBVEg9IiQocHdkKS92ZW5kb3IvYnVuZGxlIgpleHBvcnQgREFUQUJBU0VfVVJMPSJwb3N0Z3Jlc3FsOi8vL3BlbWs/aG9zdD0kKHB3ZCkvcGdzb2NrZXQiCmV4cG9ydCBQRU1LX0JJTkQ9IjAuMC4wLjAiCmV4cG9ydCBQRU1LX1BPUlQ9IiR7UEVNS19QT1JUOi05OTk4fSIKUEdCSU49JChmaW5kIC91c3IvbGliL3Bvc3RncmVzcWwgLW1heGRlcHRoIDIgLW5hbWUgcGdfY3RsIC1wcmludCAtcXVpdCAyPi9kZXYvbnVsbCB8IHhhcmdzIC1yIGRpcm5hbWUpCmlmIFsgLXogIiRQR0JJTiIgXTsgdGhlbiBlY2hvICdQb3N0Z3JlU1FMIHNlcnZlciBiaW5hcmllcyBtaXNzaW5nJzsgZXhpdCAxOyBmaQpta2RpciAtcCBwZ2RhdGEgcGdzb2NrZXQKY2htb2QgNzAwIHBnZGF0YQppZiBbICEgLWYgcGdkYXRhL1BHX1ZFUlNJT04gXTsgdGhlbgogICIkUEdCSU4vaW5pdGRiIiAtRCAiJChwd2QpL3BnZGF0YSIgLUEgdHJ1c3QgLS1uby1pbnN0cnVjdGlvbnMKZmkKIiRQR0JJTi9wZ19jdGwiIC1EICIkKHB3ZCkvcGdkYXRhIiAtbyAiLWMgbGlzdGVuX2FkZHJlc3Nlcz0nJyAtYyB1bml4X3NvY2tldF9kaXJlY3Rvcmllcz0kKHB3ZCkvcGdzb2NrZXQiIC1sICIkKHB3ZCkvcG9zdGdyZXMubG9nIiBzdGFydApjbGVhbnVwKCkgeyAiJFBHQklOL3BnX2N0bCIgLUQgIiQocHdkKS9wZ2RhdGEiIC1tIGZhc3Qgc3RvcCA+L2Rldi9udWxsIDI+JjEgfHwgdHJ1ZTsgfQp0cmFwIGNsZWFudXAgRVhJVAppZiAhIHBzcWwgLWggIiQocHdkKS9wZ3NvY2tldCIgLWQgcG9zdGdyZXMgLUF0cWMgIlNFTEVDVCAxIEZST00gcGdfZGF0YWJhc2UgV0hFUkUgZGF0bmFtZT0ncGVtayciIHwgZ3JlcCAtcSAnXjEkJzsgdGhlbgogIGNyZWF0ZWRiIC1oICIkKHB3ZCkvcGdzb2NrZXQiIHBlbWsKZmkKY2QgcHJvamVjdC9zZXJ2ZXIKYnVuZGxlIGV4ZWMgcmFrZSBkYjptaWdyYXRlCmJ1bmRsZSBleGVjIHJ1YnkgYmluL3BlbWtfc2VydmVyLnJiICYKY2hpbGQ9JCEKdHJhcCAna2lsbCAtVEVSTSAiJGNoaWxkIiAyPi9kZXYvbnVsbCB8fCB0cnVlOyB3YWl0ICIkY2hpbGQiIDI+L2Rldi9udWxsIHx8IHRydWU7IGNsZWFudXAnIFRFUk0gSU5UIEVYSVQKd2FpdCAiJGNoaWxkIgo= | base64 -d > PEMK/start.sh && chmod 755 PEMK/start.sh\"",
+    "SkipOnFailure": false
+  }
+]
